@@ -102,7 +102,7 @@ AuthStore {
 - **express.json()** - JSON parsing
 
 ### Controllers
-Бизнес-логика для каждого ресурса:
+Business logic for each resource:
 - authController - Registration, login
 - taskController - CRUD operations
 - projectController - CRUD operations

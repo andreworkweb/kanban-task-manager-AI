@@ -1,87 +1,87 @@
-# 📋 Project Checklist - Что создано
+# 📋 Project Checklist - What's Created
 
-## ✅ Структура проекта
+## ✅ Project Structure
 
 ### 📁 Root Directory
 - [x] package.json (monorepo setup)
 - [x] .gitignore
-- [x] README.md (главная документация)
-- [x] 9 документационных файлов
+- [x] README.md (main documentation)
+- [x] 9 documentation files
 
 ### 📁 Server (Backend)
-- [x] package.json с зависимостями
+- [x] package.json with dependencies
 - [x] tsconfig.json
 - [x] .env.example
-- [x] database.sql (схема БД)
-- [x] src/index.ts (главный файл)
-- [x] 4 контроллера (auth, tasks, projects, analytics)
-- [x] 4 роута
+- [x] database.sql (DB schema)
+- [x] src/index.ts (main file)
+- [x] 4 controllers (auth, tasks, projects, analytics)
+- [x] 4 routes
 - [x] 1 middleware (JWT auth)
 - [x] config/database.ts
 - [x] types/index.ts
 
 ### 📁 Client (Frontend)
-- [x] package.json с зависимостями
+- [x] package.json with dependencies
 - [x] tsconfig.json
 - [x] .env.example
 - [x] next.config.ts
 - [x] tailwind.config.ts
-- [x] 6 страниц (/, /auth, /dashboard, /tasks, /projects, /analytics)
-- [x] 4 компонента (Navbar, TaskCard, TaskList, TaskModal)
-- [x] lib/api.ts (API клиент)
+- [x] 6 pages (/, /auth, /dashboard, /tasks, /projects, /analytics)
+- [x] 4 components (Navbar, TaskCard, TaskList, TaskModal)
+- [x] lib/api.ts (API client)
 - [x] lib/store.ts (Zustand store)
-- [x] lib/utils.ts (утилиты)
+- [x] lib/utils.ts (utilities)
 - [x] types/index.ts
 
-## ✅ Функциональность
+## ✅ Functionality
 
-### Аутентификация
-- [x] Регистрация пользователей
-- [x] Вход в систему
-- [x] JWT токены
+### Authentication
+- [x] User registration
+- [x] Login
+- [x] JWT tokens
 - [x] Protected routes
 - [x] Logout
 
-### Задачи
-- [x] Создание задач
-- [x] Редактирование задач
-- [x] Удаление задач
-- [x] Просмотр всех задач
-- [x] Kanban-доска (3 колонки)
-- [x] Приоритеты (low, medium, high)
-- [x] Статусы (todo, in_progress, done)
-- [x] Дедлайны с предупреждениями
+### Tasks
+- [x] Create tasks
+- [x] Edit tasks
+- [x] Delete tasks
+- [x] View all tasks
+- [x] Kanban board (3 columns)
+- [x] Priorities (low, medium, high)
+- [x] Statuses (todo, in_progress, done)
+- [x] Deadlines with warnings
 
-### Проекты
-- [x] Создание проектов
-- [x] Удаление проектов
-- [x] Цветовые маркеры
-- [x] Привязка задач к проектам
+### Projects
+- [x] Create projects
+- [x] Delete projects
+- [x] Color markers
+- [x] Bind tasks to projects
 
 ### Dashboard
-- [x] Статистика задач
-- [x] Предупреждения о просроченных
+- [x] Task statistics
+- [x] Overdue warnings
 - [x] Upcoming deadlines
-- [x] Метрики (total, todo, in_progress, done)
+- [x] Metrics (total, todo, in_progress, done)
 
 ### Analytics
-- [x] Распределение по статусам
-- [x] Распределение по приоритетам
-- [x] Завершенные задачи (30 дней)
-- [x] Умные подсказки
+- [x] Distribution by status
+- [x] Distribution by priority
+- [x] Completed tasks (30 days)
+- [x] Smart suggestions
 
-## ✅ База данных
+## ✅ Database
 
-### Таблицы
-- [x] users (пользователи)
-- [x] projects (проекты)
-- [x] tasks (задачи)
-- [x] activity_logs (логи)
+### Tables
+- [x] users (users)
+- [x] projects (projects)
+- [x] tasks (tasks)
+- [x] activity_logs (logs)
 
-### Связи
-- [x] Foreign keys настроены
+### Relations
+- [x] Foreign keys configured
 - [x] Cascading deletes
-- [x] Индексы для производительности
+- [x] Indexes for performance
 
 ## ✅ API Endpoints
 
@@ -101,108 +101,108 @@
 
 ## ✅ UI/UX
 
-### Компоненты
-- [x] Navbar с навигацией
-- [x] TaskCard с цветовой индикацией
+### Components
+- [x] Navbar with navigation
+- [x] TaskCard with color indication
 - [x] TaskList (Kanban layout)
-- [x] TaskModal для создания/редактирования
-- [x] Формы с валидацией
+- [x] TaskModal for create/edit
+- [x] Forms with validation
 
-### Дизайн
+### Design
 - [x] Tailwind CSS
 - [x] Responsive layout
-- [x] Цветовая схема
-- [x] Hover эффекты
+- [x] Color scheme
+- [x] Hover effects
 - [x] Transitions
 
-## ✅ Безопасность
+## ✅ Security
 
-- [x] Хеширование паролей (bcryptjs)
-- [x] JWT токены с expiration
+- [x] Password hashing (bcryptjs)
+- [x] JWT tokens with expiration
 - [x] Protected routes
-- [x] SQL injection защита
-- [x] CORS настроен
+- [x] SQL injection protection
+- [x] CORS configured
 - [x] Environment variables
 
-## ✅ Документация
+## ✅ Documentation
 
-1. [x] README.md - Главная страница
-2. [x] FIRST_RUN.md - Первый запуск
-3. [x] QUICKSTART.md - Быстрый старт
-4. [x] SETUP.md - Детальная установка
-5. [x] ARCHITECTURE.md - Архитектура
-6. [x] API_EXAMPLES.md - Примеры API
-7. [x] DEPLOYMENT.md - Деплой
-8. [x] CONTRIBUTING.md - Для разработчиков
-9. [x] PROJECT_SUMMARY.md - Итоги
-10. [x] FEATURES.md - Список возможностей
+1. [x] README.md - Main page
+2. [x] FIRST_RUN.md - First run
+3. [x] QUICKSTART.md - Quick start
+4. [x] SETUP.md - Detailed installation
+5. [x] ARCHITECTURE.md - Architecture
+6. [x] API_EXAMPLES.md - API examples
+7. [x] DEPLOYMENT.md - Deployment
+8. [x] CONTRIBUTING.md - For developers
+9. [x] PROJECT_SUMMARY.md - Summary
+10. [x] FEATURES.md - Features list
 
-## ✅ Готовность к использованию
+## ✅ Ready to Use
 
-### Для разработки
-- [x] Все зависимости указаны
-- [x] .env.example файлы созданы
-- [x] npm scripts настроены
-- [x] TypeScript конфигурация
+### For Development
+- [x] All dependencies specified
+- [x] .env.example files created
+- [x] npm scripts configured
+- [x] TypeScript configuration
 
-### Для деплоя
+### For Deployment
 - [x] Production build scripts
 - [x] Environment variables
 - [x] Database schema
-- [x] CORS настроен
+- [x] CORS configured
 
-## 📊 Статистика
+## 📊 Statistics
 
-- **Документация:** 10 файлов
-- **Backend файлов:** 12 TypeScript файлов
-- **Frontend страниц:** 6 страниц
-- **React компонентов:** 4 компонента
+- **Documentation:** 10 files
+- **Backend files:** 12 TypeScript files
+- **Frontend pages:** 6 pages
+- **React components:** 4 components
 - **API endpoints:** 11 endpoints
-- **Database таблиц:** 4 таблицы
-- **Строк кода:** ~2000+
+- **Database tables:** 4 tables
+- **Lines of code:** ~2000+
 
-## 🎯 Что нужно сделать для запуска
+## 🎯 What's needed to run
 
-### Минимальные требования:
-1. [ ] Установить Node.js 18+
-2. [ ] Установить PostgreSQL 12+
-3. [ ] Создать базу данных
-4. [ ] Запустить SQL скрипт
-5. [ ] Настроить .env файлы
-6. [ ] Установить зависимости (npm install)
-7. [ ] Запустить проект (npm run dev)
+### Minimum requirements:
+1. [ ] Install Node.js 18+
+2. [ ] Install PostgreSQL 12+
+3. [ ] Create database
+4. [ ] Run SQL script
+5. [ ] Configure .env files
+6. [ ] Install dependencies (npm install)
+7. [ ] Run project (npm run dev)
 
-### Подробная инструкция:
-📖 См. [FIRST_RUN.md](FIRST_RUN.md)
+### Detailed guide:
+📖 See [FIRST_RUN.md](FIRST_RUN.md)
 
-## 🚀 Следующие шаги
+## 🚀 Next Steps
 
-### Для использования:
-1. Следуйте инструкциям в FIRST_RUN.md
-2. Зарегистрируйте пользователя
-3. Создайте первую задачу
-4. Изучите все возможности
+### For usage:
+1. Follow instructions in FIRST_RUN.md
+2. Register a user
+3. Create first task
+4. Explore all features
 
-### Для разработки:
-1. Прочитайте ARCHITECTURE.md
-2. Изучите API_EXAMPLES.md
-3. Посмотрите CONTRIBUTING.md
-4. Добавьте новые фичи
+### For development:
+1. Read ARCHITECTURE.md
+2. Study API_EXAMPLES.md
+3. Check CONTRIBUTING.md
+4. Add new features
 
-### Для деплоя:
-1. Прочитайте DEPLOYMENT.md
-2. Настройте production БД
-3. Деплойте на Vercel/Heroku
-4. Настройте мониторинг
+### For deployment:
+1. Read DEPLOYMENT.md
+2. Configure production DB
+3. Deploy to Vercel/Heroku
+4. Configure monitoring
 
-## ✨ Проект готов!
+## ✨ Project is ready!
 
-Все файлы созданы, структура настроена, документация написана.
+All files created, structure configured, documentation written.
 
-**Время на создание:** ~1 час  
-**Готовность:** 100%  
-**Статус:** ✅ Production Ready
+**Time to create:** ~1 hour  
+**Readiness:** 100%  
+**Status:** ✅ Production Ready
 
 ---
 
-**Начните с:** [FIRST_RUN.md](FIRST_RUN.md) для первого запуска!
+**Start with:** [FIRST_RUN.md](FIRST_RUN.md) for first run!

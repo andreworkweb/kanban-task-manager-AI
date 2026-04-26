@@ -4,13 +4,13 @@
 
 ### Backend Deployment (Heroku/Railway/Render)
 
-1. **Подготовка**
+1. **Preparation**
 ```bash
 cd server
 npm run build
 ```
 
-2. **Переменные окружения**
+2. **Environment Variables**
 ```
 NODE_ENV=production
 PORT=5000
@@ -29,14 +29,14 @@ git push heroku main
 
 ### Frontend Deployment (Vercel)
 
-1. **Подключите GitHub репозиторий к Vercel**
+1. **Connect GitHub repository to Vercel**
 
-2. **Настройте переменные окружения в Vercel:**
+2. **Configure environment variables in Vercel:**
 ```
 NEXT_PUBLIC_API_URL=https://your-backend-url.com/api
 ```
 
-3. **Build настройки:**
+3. **Build settings:**
 - Framework: Next.js
 - Root Directory: client
 - Build Command: `npm run build`
@@ -44,17 +44,17 @@ NEXT_PUBLIC_API_URL=https://your-backend-url.com/api
 
 ### Database Setup (Production)
 
-**Создайте production базу данных:**
+**Create production database:**
 
 ```bash
-# Для Heroku Postgres
+# For Heroku Postgres
 heroku pg:psql < server/database.sql
 
-# Для других провайдеров
+# For other providers
 psql $DATABASE_URL < server/database.sql
 ```
 
-## Docker Deployment (опционально)
+## Docker Deployment (optional)
 
 ### Backend Dockerfile
 ```dockerfile
@@ -120,18 +120,18 @@ volumes:
 
 ## Security Checklist
 
-- [ ] Используйте сильные JWT секреты
-- [ ] Включите HTTPS в production
-- [ ] Настройте CORS правильно
-- [ ] Используйте переменные окружения для секретов
-- [ ] Регулярно обновляйте зависимости
-- [ ] Добавьте rate limiting
-- [ ] Валидируйте все входные данные
-- [ ] Используйте prepared statements для SQL
+- [ ] Use strong JWT secrets
+- [ ] Enable HTTPS in production
+- [ ] Configure CORS correctly
+- [ ] Use environment variables for secrets
+- [ ] Regularly update dependencies
+- [ ] Add rate limiting
+- [ ] Validate all input data
+- [ ] Use prepared statements for SQL
 
 ## Monitoring
 
-Рекомендуемые инструменты:
+Recommended tools:
 - **Backend**: PM2, New Relic, Sentry
 - **Frontend**: Vercel Analytics, Google Analytics
 - **Database**: pgAdmin, DataDog
@@ -139,7 +139,7 @@ volumes:
 ## Backup Strategy
 
 ```bash
-# Backup базы данных
+# Backup database
 pg_dump $DATABASE_URL > backup_$(date +%Y%m%d).sql
 
 # Restore

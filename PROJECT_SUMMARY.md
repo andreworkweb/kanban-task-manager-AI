@@ -1,150 +1,150 @@
 # Project Summary
 
-## 📊 Статистика проекта
+## 📊 Project Statistics
 
-- **Дата создания:** 26 апреля 2026
-- **Языки:** TypeScript, SQL
-- **Строк кода:** ~2000+
-- **Файлов:** 50+
-- **Документации:** 7 файлов
+- **Creation date:** April 26, 2026
+- **Languages:** TypeScript, SQL
+- **Lines of code:** ~2000+
+- **Files:** 50+
+- **Documentation:** 7 files
 
-## 🎯 Что реализовано
+## 🎯 What's Implemented
 
 ### Backend (Express + TypeScript)
-✅ REST API с 4 основными роутами
-✅ JWT аутентификация с middleware
-✅ PostgreSQL база данных (4 таблицы)
-✅ CRUD операции для задач и проектов
-✅ Аналитика с SQL агрегациями
-✅ Валидация и обработка ошибок
-✅ Логирование активности пользователей
+✅ REST API with 4 main routes
+✅ JWT authentication with middleware
+✅ PostgreSQL database (4 tables)
+✅ CRUD operations for tasks and projects
+✅ Analytics with SQL aggregations
+✅ Validation and error handling
+✅ User activity logging
 
-**Файлы:**
-- 4 контроллера (auth, tasks, projects, analytics)
-- 4 роута
+**Files:**
+- 4 controllers (auth, tasks, projects, analytics)
+- 4 routes
 - 1 middleware (JWT auth)
-- Database schema с индексами
-- TypeScript типы
+- Database schema with indexes
+- TypeScript types
 
 ### Frontend (Next.js + React)
-✅ 5 страниц (auth, dashboard, tasks, projects, analytics)
-✅ Responsive UI с Tailwind CSS
+✅ 5 pages (auth, dashboard, tasks, projects, analytics)
+✅ Responsive UI with Tailwind CSS
 ✅ State management (Zustand)
-✅ API интеграция (Axios)
-✅ Kanban-доска для задач
-✅ Модальные окна для создания/редактирования
-✅ Умные подсказки и предупреждения
-✅ Форматирование дат и дедлайнов
+✅ API integration (Axios)
+✅ Kanban board for tasks
+✅ Modal windows for create/edit
+✅ Smart suggestions and warnings
+✅ Date and deadline formatting
 
-**Компоненты:**
-- Navbar с навигацией
+**Components:**
+- Navbar with navigation
 - TaskCard, TaskList, TaskModal
-- Dashboard с статистикой
-- Analytics с графиками
+- Dashboard with statistics
+- Analytics with charts
 - Projects management
 
-### База данных
-✅ 4 таблицы с связями
-✅ Индексы для производительности
+### Database
+✅ 4 tables with relations
+✅ Indexes for performance
 ✅ Cascading deletes
-✅ Constraints для валидации
+✅ Constraints for validation
 
-**Таблицы:**
-- users (аутентификация)
-- tasks (основная сущность)
-- projects (группировка)
-- activity_logs (аудит)
+**Tables:**
+- users (authentication)
+- tasks (main entity)
+- projects (grouping)
+- activity_logs (audit)
 
-## 📚 Документация
+## 📚 Documentation
 
-1. **README.md** - Главная страница проекта
-2. **QUICKSTART.md** - Быстрый старт с чеклистом
-3. **SETUP.md** - Детальная установка
-4. **ARCHITECTURE.md** - Архитектура и data flow
-5. **API_EXAMPLES.md** - Примеры API запросов
-6. **DEPLOYMENT.md** - Production деплой
-7. **CONTRIBUTING.md** - Гайд для разработчиков
+1. **README.md** - Project main page
+2. **QUICKSTART.md** - Quick start with checklist
+3. **SETUP.md** - Detailed installation
+4. **ARCHITECTURE.md** - Architecture and data flow
+5. **API_EXAMPLES.md** - API request examples
+6. **DEPLOYMENT.md** - Production deployment
+7. **CONTRIBUTING.md** - Developer guide
 
-## 🎨 Особенности UI
+## 🎨 UI Features
 
-- Современный дизайн с Tailwind CSS
-- Цветовая индикация приоритетов
-- Предупреждения о просроченных задачах
-- Статистика в реальном времени
-- Адаптивная верстка (mobile-first)
+- Modern design with Tailwind CSS
+- Color indication for priorities
+- Overdue task warnings
+- Real-time statistics
+- Adaptive layout (mobile-first)
 
-## 🔐 Безопасность
+## 🔐 Security
 
-- Хеширование паролей (bcryptjs, 10 rounds)
-- JWT токены с expiration
+- Password hashing (bcryptjs, 10 rounds)
+- JWT tokens with expiration
 - Protected routes
-- SQL injection защита
-- CORS настроен
+- SQL injection protection
+- CORS configured
 
-## 📈 Аналитика
+## 📈 Analytics
 
-- Задачи по статусам (todo, in_progress, done)
-- Задачи по приоритетам (low, medium, high)
-- Завершенные задачи за 30 дней
-- Upcoming deadlines (7 дней)
-- Умные подсказки (перегрузка, дедлайны)
+- Tasks by status (todo, in_progress, done)
+- Tasks by priority (low, medium, high)
+- Completed tasks in 30 days
+- Upcoming deadlines (7 days)
+- Smart suggestions (overload, deadlines)
 
-## 🚀 Готово к использованию
+## 🚀 Ready to Use
 
-### Что работает из коробки:
-✅ Регистрация и авторизация
-✅ Создание и управление задачами
-✅ Создание проектов
-✅ Kanban-доска
-✅ Dashboard с метриками
-✅ Аналитика продуктивности
-✅ Предупреждения о дедлайнах
+### What works out of the box:
+✅ Registration and authorization
+✅ Create and manage tasks
+✅ Create projects
+✅ Kanban board
+✅ Dashboard with metrics
+✅ Productivity analytics
+✅ Deadline warnings
 
-### Что можно добавить:
-- [ ] Drag & drop для Kanban
-- [ ] Графики с recharts
-- [ ] Темная тема
-- [ ] Email уведомления
-- [ ] Экспорт данных
-- [ ] Командная работа
-- [ ] Подзадачи
-- [ ] Теги
-- [ ] Поиск и фильтры
-- [ ] Повторяющиеся задачи
+### What can be added:
+- [ ] Drag & drop for Kanban
+- [ ] Charts with recharts
+- [ ] Dark theme
+- [ ] Email notifications
+- [ ] Data export
+- [ ] Team collaboration
+- [ ] Subtasks
+- [ ] Tags
+- [ ] Search and filters
+- [ ] Recurring tasks
 
-## 💡 Технические решения
+## 💡 Technical Decisions
 
-### Почему Next.js?
-- SSR для быстрой загрузки
-- App Router для современной архитектуры
-- Built-in оптимизации
+### Why Next.js?
+- SSR for fast loading
+- App Router for modern architecture
+- Built-in optimizations
 - SEO-friendly
 
-### Почему Zustand?
-- Легковесный (1kb)
-- Простой API
+### Why Zustand?
+- Lightweight (1kb)
+- Simple API
 - TypeScript support
-- Без boilerplate
+- No boilerplate
 
-### Почему PostgreSQL?
-- Надежность и ACID
-- Мощные агрегации для аналитики
-- Отличная поддержка индексов
+### Why PostgreSQL?
+- Reliability and ACID
+- Powerful aggregations for analytics
+- Excellent index support
 - Production-ready
 
-## 🎓 Что демонстрирует проект
+## 🎓 What the Project Demonstrates
 
-### Для резюме:
-✅ Fullstack разработка (Frontend + Backend)
-✅ TypeScript на обеих сторонах
-✅ REST API дизайн
-✅ Database design и SQL
-✅ Аутентификация и авторизация
+### For Resume:
+✅ Fullstack development (Frontend + Backend)
+✅ TypeScript on both sides
+✅ REST API design
+✅ Database design and SQL
+✅ Authentication and authorization
 ✅ State management
 ✅ Responsive UI
-✅ Документирование кода
+✅ Code documentation
 
-### Навыки:
+### Skills:
 - React/Next.js
 - Node.js/Express
 - TypeScript
@@ -154,36 +154,36 @@
 - Git
 - Tailwind CSS
 
-## 📦 Размер проекта
+## 📦 Project Size
 
 ```
 Backend:
-- Controllers: ~400 строк
-- Routes: ~100 строк
-- Middleware: ~30 строк
-- Types: ~50 строк
+- Controllers: ~400 lines
+- Routes: ~100 lines
+- Middleware: ~30 lines
+- Types: ~50 lines
 
 Frontend:
-- Pages: ~600 строк
-- Components: ~500 строк
-- Utils/API: ~200 строк
-- Types: ~50 строк
+- Pages: ~600 lines
+- Components: ~500 lines
+- Utils/API: ~200 lines
+- Types: ~50 lines
 
 Database:
-- Schema: ~80 строк SQL
+- Schema: ~80 lines SQL
 ```
 
-## 🎉 Итого
+## 🎉 Summary
 
-Полноценный production-ready проект для управления задачами с:
-- Современным стеком технологий
-- Чистой архитектурой
-- Полной документацией
-- Готовностью к деплою
-- Возможностью расширения
+Full-featured production-ready task management project with:
+- Modern tech stack
+- Clean architecture
+- Complete documentation
+- Deployment ready
+- Extensibility
 
-**Идеально для:**
-- Портфолио
-- Резюме
-- Обучения
-- Базы для реального продукта
+**Perfect for:**
+- Portfolio
+- Resume
+- Learning
+- Base for a real product

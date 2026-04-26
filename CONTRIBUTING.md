@@ -2,23 +2,23 @@
 
 ## Development Workflow
 
-1. **Fork и клонирование**
+1. **Fork and Clone**
 ```bash
 git clone https://github.com/yourusername/smart-task-platform.git
 cd smart-task-platform
 ```
 
-2. **Создание ветки**
+2. **Create Branch**
 ```bash
 git checkout -b feature/your-feature-name
 ```
 
-3. **Разработка**
-- Следуйте существующему стилю кода
-- Пишите понятные commit messages
-- Тестируйте изменения локально
+3. **Development**
+- Follow existing code style
+- Write clear commit messages
+- Test changes locally
 
-4. **Commit и Push**
+4. **Commit and Push**
 ```bash
 git add .
 git commit -m "feat: add new feature"
@@ -26,39 +26,39 @@ git push origin feature/your-feature-name
 ```
 
 5. **Pull Request**
-- Создайте PR с описанием изменений
-- Дождитесь review
+- Create PR with description of changes
+- Wait for review
 
 ## Code Style
 
 ### TypeScript
-- Используйте строгую типизацию
-- Избегайте `any`
-- Используйте интерфейсы для объектов
+- Use strict typing
+- Avoid `any`
+- Use interfaces for objects
 
 ### React
-- Функциональные компоненты с hooks
-- Используйте `'use client'` для клиентских компонентов
-- Разделяйте логику и UI
+- Functional components with hooks
+- Use `'use client'` for client components
+- Separate logic and UI
 
 ### Naming Conventions
 - Components: PascalCase (TaskCard.tsx)
 - Functions: camelCase (fetchTasks)
 - Constants: UPPER_SNAKE_CASE (API_URL)
-- Files: kebab-case или PascalCase
+- Files: kebab-case or PascalCase
 
 ## Commit Messages
 
-Используйте conventional commits:
-- `feat:` - новая функция
-- `fix:` - исправление бага
-- `docs:` - документация
-- `style:` - форматирование
-- `refactor:` - рефакторинг
-- `test:` - тесты
-- `chore:` - обслуживание
+Use conventional commits:
+- `feat:` - new feature
+- `fix:` - bug fix
+- `docs:` - documentation
+- `style:` - formatting
+- `refactor:` - refactoring
+- `test:` - tests
+- `chore:` - maintenance
 
-Примеры:
+Examples:
 ```
 feat: add task filtering by priority
 fix: resolve authentication token expiry issue
@@ -79,16 +79,16 @@ npm test
 
 ## Feature Ideas
 
-- [ ] Drag & drop для Kanban доски
-- [ ] Темная тема
-- [ ] Мобильное приложение (React Native)
-- [ ] Интеграция с календарем
-- [ ] Email уведомления
-- [ ] Экспорт в PDF/CSV
-- [ ] Командная работа
-- [ ] Подзадачи
-- [ ] Теги для задач
-- [ ] Поиск и фильтрация
-- [ ] Повторяющиеся задачи
-- [ ] Таймер Pomodoro
-- [ ] Интеграция с GitHub/Jira
+- [ ] Drag & drop for Kanban board
+- [ ] Dark theme
+- [ ] Mobile app (React Native)
+- [ ] Calendar integration
+- [ ] Email notifications
+- [ ] Export to PDF/CSV
+- [ ] Team collaboration
+- [ ] Subtasks
+- [ ] Task tags
+- [ ] Search and filtering
+- [ ] Recurring tasks
+- [ ] Pomodoro timer
+- [ ] GitHub/Jira integration

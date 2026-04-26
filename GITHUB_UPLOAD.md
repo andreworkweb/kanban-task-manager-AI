@@ -1,86 +1,86 @@
-# 📤 Загрузка проекта на GitHub
+# 📤 Uploading Project to GitHub
 
-## Шаг 1: Создайте репозиторий на GitHub
+## Step 1: Create a repository on GitHub
 
-1. Перейдите на https://github.com
-2. Нажмите "New repository" (зеленая кнопка)
-3. Заполните:
-   - **Repository name:** `smart-task-platform` (или любое другое имя)
+1. Go to https://github.com
+2. Click "New repository" (green button)
+3. Fill in:
+   - **Repository name:** `smart-task-platform` (or any other name)
    - **Description:** `Smart Task & Productivity Platform with Next.js, Express, and PostgreSQL`
-   - **Visibility:** Public (или Private, если хотите)
-   - **НЕ** добавляйте README, .gitignore или license (они уже есть)
-4. Нажмите "Create repository"
+   - **Visibility:** Public (or Private, if you prefer)
+   - **DO NOT** add README, .gitignore or license (they already exist)
+4. Click "Create repository"
 
-## Шаг 2: Подключите локальный репозиторий к GitHub
+## Step 2: Connect local repository to GitHub
 
-Скопируйте URL вашего нового репозитория (например: `https://github.com/username/smart-task-platform.git`)
+Copy the URL of your new repository (e.g.: `https://github.com/username/smart-task-platform.git`)
 
-Затем выполните команды:
+Then run the commands:
 
 ```bash
 cd "A:\I WONNA\projultr"
 
-# Добавьте remote
+# Add remote
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 
-# Проверьте что remote добавлен
+# Check that remote was added
 git remote -v
 
-# Отправьте код на GitHub
+# Push code to GitHub
 git push -u origin main
 ```
 
-## Шаг 3: Проверьте на GitHub
+## Step 3: Check on GitHub
 
-Обновите страницу репозитория на GitHub - вы должны увидеть:
-- ✅ Все файлы проекта
-- ✅ README.md отображается на главной странице
-- ✅ 11 документационных файлов
-- ✅ Папки client/ и server/
+Refresh the repository page on GitHub - you should see:
+- ✅ All project files
+- ✅ README.md displayed on the main page
+- ✅ 11 documentation files
+- ✅ client/ and server/ folders
 
-## Альтернативный способ (если есть проблемы)
+## Alternative method (if there are issues)
 
-Если возникли проблемы с client папкой:
+If you have problems with the client folder:
 
 ```bash
 cd "A:\I WONNA\projultr"
 
-# Удалите вложенный git репозиторий из client
+# Remove nested git repository from client
 rm -rf client/.git
 
-# Добавьте все файлы заново
+# Add all files again
 git add .
 git commit -m "Add all client files"
 
-# Отправьте на GitHub
+# Push to GitHub
 git push origin main
 ```
 
-## Что будет на GitHub
+## What will be on GitHub
 
-### Структура репозитория:
+### Repository structure:
 ```
 smart-task-platform/
-├── 📄 README.md (главная страница)
-├── 📄 11 документационных файлов
+├── 📄 README.md (main page)
+├── 📄 11 documentation files
 ├── 📁 client/ (Next.js frontend)
 ├── 📁 server/ (Express backend)
 ├── 📄 package.json
 └── 📄 LICENSE
 ```
 
-### Главная страница (README.md):
-- Описание проекта
-- Badges (статус, технологии)
-- Список возможностей
-- Инструкции по установке
-- Ссылки на документацию
+### Main page (README.md):
+- Project description
+- Badges (status, technologies)
+- Features list
+- Installation instructions
+- Documentation links
 
-## Шаг 4: Настройте GitHub репозиторий
+## Step 4: Configure GitHub repository
 
-### Добавьте Topics (теги):
-1. Перейдите в Settings → Topics
-2. Добавьте теги:
+### Add Topics (tags):
+1. Go to Settings → Topics
+2. Add tags:
    - `typescript`
    - `nextjs`
    - `react`
@@ -92,29 +92,29 @@ smart-task-platform/
    - `jwt-authentication`
    - `fullstack`
 
-### Добавьте описание:
-В настройках репозитория добавьте:
+### Add description:
+In repository settings add:
 > Smart Task & Productivity Platform with analytics, JWT auth, and Kanban board. Built with Next.js, Express, TypeScript, and PostgreSQL.
 
-### Включите GitHub Pages (опционально):
-Если хотите задеплоить документацию:
+### Enable GitHub Pages (optional):
+If you want to deploy documentation:
 1. Settings → Pages
 2. Source: Deploy from a branch
 3. Branch: main, folder: / (root)
 
-## Шаг 5: Добавьте скриншоты (опционально)
+## Step 5: Add screenshots (optional)
 
-Создайте папку `screenshots/` и добавьте скриншоты:
+Create a `screenshots/` folder and add screenshots:
 ```bash
 mkdir screenshots
-# Добавьте скриншоты: dashboard.png, tasks.png, analytics.png
+# Add screenshots: dashboard.png, tasks.png, analytics.png
 
 git add screenshots/
 git commit -m "Add screenshots"
 git push
 ```
 
-Затем обновите README.md, добавив:
+Then update README.md by adding:
 ```markdown
 ## 📸 Screenshots
 
@@ -128,64 +128,64 @@ git push
 ![Analytics](screenshots/analytics.png)
 ```
 
-## Полезные команды Git
+## Useful Git commands
 
 ```bash
-# Проверить статус
+# Check status
 git status
 
-# Посмотреть историю коммитов
+# View commit history
 git log --oneline
 
-# Посмотреть изменения
+# View changes
 git diff
 
-# Добавить новые файлы
+# Add new files
 git add .
 git commit -m "Your message"
 git push
 
-# Создать новую ветку
+# Create new branch
 git checkout -b feature/new-feature
 
-# Переключиться на main
+# Switch to main
 git checkout main
 
-# Слить ветку
+# Merge branch
 git merge feature/new-feature
 ```
 
-## Что делать дальше
+## What to do next
 
-### 1. Добавьте GitHub Actions (CI/CD)
-Создайте `.github/workflows/ci.yml` для автоматического тестирования
+### 1. Add GitHub Actions (CI/CD)
+Create `.github/workflows/ci.yml` for automatic testing
 
-### 2. Настройте Dependabot
-Для автоматического обновления зависимостей
+### 2. Configure Dependabot
+For automatic dependency updates
 
-### 3. Добавьте badges в README
+### 3. Add badges to README
 ```markdown
 ![GitHub stars](https://img.shields.io/github/stars/username/repo)
 ![GitHub forks](https://img.shields.io/github/forks/username/repo)
 ![GitHub issues](https://img.shields.io/github/issues/username/repo)
 ```
 
-### 4. Создайте Release
-1. Перейдите в Releases
-2. Нажмите "Create a new release"
+### 4. Create Release
+1. Go to Releases
+2. Click "Create a new release"
 3. Tag: `v1.0.0`
 4. Title: `Initial Release`
-5. Описание: список возможностей
+5. Description: list of features
 
-## Готово! 🎉
+## Done! 🎉
 
-Ваш проект теперь на GitHub и доступен всему миру!
+Your project is now on GitHub and available to the world!
 
-**Ссылка на репозиторий:**
+**Repository link:**
 `https://github.com/YOUR_USERNAME/YOUR_REPO_NAME`
 
-**Поделитесь проектом:**
-- Добавьте в портфолио
-- Укажите в резюме
-- Поделитесь в LinkedIn
-- Добавьте в README вашего профиля GitHub
+**Share the project:**
+- Add to portfolio
+- Include in resume
+- Share on LinkedIn
+- Add to your GitHub profile README

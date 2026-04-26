@@ -1,27 +1,27 @@
 # Smart Task & Productivity Platform
 
-## Установка и запуск
+## Installation and Setup
 
-### 1. Установка зависимостей
+### 1. Install Dependencies
 
 ```bash
-# Установка зависимостей для всего проекта
+# Install dependencies for entire project
 npm install
 
-# Или отдельно для каждой части
+# Or separately for each part
 cd server && npm install
 cd ../client && npm install
 ```
 
-### 2. Настройка базы данных
+### 2. Database Setup
 
-Создайте PostgreSQL базу данных и выполните SQL-скрипт:
+Create a PostgreSQL database and run the SQL script:
 
 ```bash
 psql -U your_user -d your_database -f server/database.sql
 ```
 
-### 3. Настройка переменных окружения
+### 3. Configure Environment Variables
 
 **Backend (server/.env):**
 ```
@@ -36,13 +36,13 @@ JWT_EXPIRES_IN=7d
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
 
-### 4. Запуск проекта
+### 4. Run Project
 
 ```bash
-# Запуск всего проекта (frontend + backend)
+# Run entire project (frontend + backend)
 npm run dev
 
-# Или отдельно:
+# Or separately:
 # Backend
 cd server && npm run dev
 
@@ -50,61 +50,61 @@ cd server && npm run dev
 cd client && npm run dev
 ```
 
-Backend будет доступен на `http://localhost:5000`
-Frontend будет доступен на `http://localhost:3000`
+Backend will be available at `http://localhost:5000`
+Frontend will be available at `http://localhost:3000`
 
-## Структура проекта
+## Project Structure
 
 ```
 projultr/
 ├── client/              # Next.js frontend
 │   ├── app/            # Next.js app router pages
-│   ├── components/     # React компоненты
-│   ├── lib/           # Утилиты, API, store
-│   └── types/         # TypeScript типы
+│   ├── components/     # React components
+│   ├── lib/           # Utilities, API, store
+│   └── types/         # TypeScript types
 ├── server/             # Express backend
 │   ├── src/
-│   │   ├── config/    # Конфигурация БД
-│   │   ├── controllers/ # Контроллеры
+│   │   ├── config/    # DB configuration
+│   │   ├── controllers/ # Controllers
 │   │   ├── middleware/  # Middleware
-│   │   ├── routes/      # API маршруты
-│   │   └── types/       # TypeScript типы
-│   └── database.sql    # SQL схема
+│   │   ├── routes/      # API routes
+│   │   └── types/       # TypeScript types
+│   └── database.sql    # SQL schema
 └── package.json        # Root package.json
 ```
 
 ## API Endpoints
 
 ### Auth
-- `POST /api/auth/register` - Регистрация
-- `POST /api/auth/login` - Вход
+- `POST /api/auth/register` - Registration
+- `POST /api/auth/login` - Login
 
 ### Tasks
-- `GET /api/tasks` - Получить все задачи
-- `POST /api/tasks` - Создать задачу
-- `PUT /api/tasks/:id` - Обновить задачу
-- `DELETE /api/tasks/:id` - Удалить задачу
+- `GET /api/tasks` - Get all tasks
+- `POST /api/tasks` - Create task
+- `PUT /api/tasks/:id` - Update task
+- `DELETE /api/tasks/:id` - Delete task
 
 ### Projects
-- `GET /api/projects` - Получить все проекты
-- `POST /api/projects` - Создать проект
-- `DELETE /api/projects/:id` - Удалить проект
+- `GET /api/projects` - Get all projects
+- `POST /api/projects` - Create project
+- `DELETE /api/projects/:id` - Delete project
 
 ### Analytics
-- `GET /api/analytics` - Получить аналитику
+- `GET /api/analytics` - Get analytics
 
-## Возможности
+## Features
 
-- ✅ Авторизация с JWT
-- ✅ CRUD операции для задач и проектов
-- ✅ Kanban-доска (To Do, In Progress, Done)
-- ✅ Приоритеты задач (Low, Medium, High)
-- ✅ Дедлайны с предупреждениями
-- ✅ Аналитика продуктивности
-- ✅ Умные подсказки (просроченные задачи, много задач)
-- ✅ Responsive дизайн
+- ✅ JWT Authentication
+- ✅ CRUD operations for tasks and projects
+- ✅ Kanban board (To Do, In Progress, Done)
+- ✅ Task priorities (Low, Medium, High)
+- ✅ Deadlines with warnings
+- ✅ Productivity analytics
+- ✅ Smart suggestions (overdue tasks, many tasks)
+- ✅ Responsive design
 
-## Технологии
+## Technologies
 
 **Frontend:**
 - Next.js 15
@@ -122,11 +122,11 @@ projultr/
 - JWT Authentication
 - bcryptjs
 
-## Дальнейшее развитие
+## Future Development
 
-- [ ] Drag & drop для Kanban
-- [ ] Графики аналитики (recharts)
-- [ ] Уведомления в реальном времени
-- [ ] Темная тема
-- [ ] Экспорт данных
-- [ ] Совместная работа (команды)
+- [ ] Drag & drop for Kanban
+- [ ] Analytics charts (recharts)
+- [ ] Real-time notifications
+- [ ] Dark theme
+- [ ] Data export
+- [ ] Team collaboration

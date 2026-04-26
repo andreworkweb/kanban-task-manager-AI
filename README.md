@@ -1,72 +1,72 @@
 # 🚀 Smart Task & Productivity Platform
 
-Полноценная система управления задачами с аналитикой продуктивности, JWT авторизацией и REST API.
+A comprehensive task management system with productivity analytics, JWT authentication, and REST API.
 
 ![Status](https://img.shields.io/badge/status-ready-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)
 ![Next.js](https://img.shields.io/badge/Next.js-15-black)
 ![Node.js](https://img.shields.io/badge/Node.js-20-green)
 
-## ✨ Возможности
+## ✨ Features
 
-- ✅ **Управление задачами** - создание, редактирование, удаление
-- ✅ **Kanban-доска** - визуализация задач (To Do, In Progress, Done)
-- ✅ **Проекты** - группировка задач по проектам
-- ✅ **Приоритеты** - Low, Medium, High
-- ✅ **Дедлайны** - отслеживание сроков с предупреждениями
-- ✅ **Аналитика** - графики продуктивности и статистика
-- ✅ **Умные подсказки** - предупреждения о перегрузке и дедлайнах
-- ✅ **JWT авторизация** - безопасная аутентификация
-- ✅ **Responsive дизайн** - работает на всех устройствах
+- ✅ **Task Management** - create, edit, delete
+- ✅ **Kanban Board** - task visualization (To Do, In Progress, Done)
+- ✅ **Projects** - group tasks by projects
+- ✅ **Priorities** - Low, Medium, High
+- ✅ **Deadlines** - track due dates with warnings
+- ✅ **Analytics** - productivity charts and statistics
+- ✅ **Smart Suggestions** - overload and deadline warnings
+- ✅ **JWT Authentication** - secure authentication
+- ✅ **Responsive Design** - works on all devices
 
-## 🛠 Стек технологий
+## 🛠 Tech Stack
 
 ### Frontend
-- **Next.js 15** - React framework с SSR
-- **TypeScript** - типизация
-- **Tailwind CSS** - стилизация
+- **Next.js 15** - React framework with SSR
+- **TypeScript** - type safety
+- **Tailwind CSS** - styling
 - **Zustand** - state management
-- **Axios** - HTTP клиент
+- **Axios** - HTTP client
 
 ### Backend
 - **Node.js + Express** - REST API
-- **TypeScript** - типизация
-- **PostgreSQL** - база данных
-- **JWT** - аутентификация
-- **bcryptjs** - хеширование паролей
+- **TypeScript** - type safety
+- **PostgreSQL** - database
+- **JWT** - authentication
+- **bcryptjs** - password hashing
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### Требования
+### Requirements
 - Node.js 18+
 - PostgreSQL 12+
-- npm или yarn
+- npm or yarn
 
-### Установка
+### Installation
 
-1. **Клонируйте репозиторий**
+1. **Clone the repository**
 ```bash
 git clone <your-repo-url>
 cd projultr
 ```
 
-2. **Настройте базу данных**
+2. **Set up the database**
 ```bash
 createdb smart_tasks
 psql -d smart_tasks -f server/database.sql
 ```
 
-3. **Настройте переменные окружения**
+3. **Configure environment variables**
 ```bash
 # Backend
 cp server/.env.example server/.env
-# Отредактируйте server/.env
+# Edit server/.env
 
 # Frontend
 cp client/.env.example client/.env.local
 ```
 
-4. **Установите зависимости и запустите**
+4. **Install dependencies and run**
 ```bash
 npm install
 npm run dev
@@ -75,76 +75,76 @@ npm run dev
 Frontend: http://localhost:3000  
 Backend: http://localhost:5000
 
-📖 **Подробная инструкция:** [QUICKSTART.md](QUICKSTART.md)
+📖 **Detailed guide:** [QUICKSTART.md](QUICKSTART.md)
 
-## 📚 Документация
+## 📚 Documentation
 
-- [QUICKSTART.md](QUICKSTART.md) - Быстрый старт и чеклист
-- [SETUP.md](SETUP.md) - Детальная установка
-- [ARCHITECTURE.md](ARCHITECTURE.md) - Архитектура проекта
-- [API_EXAMPLES.md](API_EXAMPLES.md) - Примеры API запросов
-- [DEPLOYMENT.md](DEPLOYMENT.md) - Деплой в production
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Гайд для контрибьюторов
+- [QUICKSTART.md](QUICKSTART.md) - Quick start and checklist
+- [SETUP.md](SETUP.md) - Detailed installation
+- [ARCHITECTURE.md](ARCHITECTURE.md) - Project architecture
+- [API_EXAMPLES.md](API_EXAMPLES.md) - API request examples
+- [DEPLOYMENT.md](DEPLOYMENT.md) - Production deployment
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contributor guide
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```
 projultr/
 ├── client/              # Next.js Frontend
 │   ├── app/            # Pages (App Router)
-│   ├── components/     # React компоненты
+│   ├── components/     # React components
 │   ├── lib/           # API, store, utils
-│   └── types/         # TypeScript типы
+│   └── types/         # TypeScript types
 ├── server/             # Express Backend
 │   ├── src/
-│   │   ├── controllers/  # Бизнес-логика
-│   │   ├── routes/       # API маршруты
+│   │   ├── controllers/  # Business logic
+│   │   ├── routes/       # API routes
 │   │   ├── middleware/   # JWT auth
 │   │   └── config/       # Database config
-│   └── database.sql    # SQL схема
-└── docs/              # Документация
+│   └── database.sql    # SQL schema
+└── docs/              # Documentation
 ```
 
 ## 🎯 API Endpoints
 
 ### Auth
-- `POST /api/auth/register` - Регистрация
-- `POST /api/auth/login` - Вход
+- `POST /api/auth/register` - Registration
+- `POST /api/auth/login` - Login
 
 ### Tasks (Protected)
-- `GET /api/tasks` - Все задачи
-- `POST /api/tasks` - Создать задачу
-- `PUT /api/tasks/:id` - Обновить
-- `DELETE /api/tasks/:id` - Удалить
+- `GET /api/tasks` - All tasks
+- `POST /api/tasks` - Create task
+- `PUT /api/tasks/:id` - Update
+- `DELETE /api/tasks/:id` - Delete
 
 ### Projects (Protected)
-- `GET /api/projects` - Все проекты
-- `POST /api/projects` - Создать проект
-- `DELETE /api/projects/:id` - Удалить
+- `GET /api/projects` - All projects
+- `POST /api/projects` - Create project
+- `DELETE /api/projects/:id` - Delete
 
 ### Analytics (Protected)
-- `GET /api/analytics` - Статистика
+- `GET /api/analytics` - Statistics
 
-## 🎨 Скриншоты
+## 🎨 Screenshots
 
 ### Dashboard
-Обзор задач, статистика, предупреждения о дедлайнах
+Task overview, statistics, deadline warnings
 
 ### Tasks (Kanban)
-Kanban-доска с тремя колонками: To Do, In Progress, Done
+Kanban board with three columns: To Do, In Progress, Done
 
 ### Analytics
-Графики продуктивности, распределение по приоритетам и статусам
+Productivity charts, distribution by priorities and statuses
 
-## 🔐 Безопасность
+## 🔐 Security
 
-- Пароли хешируются с bcryptjs
-- JWT токены с 7-дневным сроком действия
-- Protected routes с middleware
-- SQL injection защита через prepared statements
-- CORS настроен
+- Passwords hashed with bcryptjs
+- JWT tokens with 7-day expiration
+- Protected routes with middleware
+- SQL injection protection via prepared statements
+- CORS configured
 
-## 🚀 Деплой
+## 🚀 Deployment
 
 ### Vercel (Frontend)
 ```bash
@@ -158,20 +158,20 @@ heroku addons:create heroku-postgresql
 git push heroku main
 ```
 
-Подробнее: [DEPLOYMENT.md](DEPLOYMENT.md)
+More details: [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## 🤝 Contributing
 
-Contributions приветствуются! Прочитайте [CONTRIBUTING.md](CONTRIBUTING.md)
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## 📝 License
 
 MIT License
 
-## 👨‍💻 Автор
+## 👨‍💻 Author
 
-Создано для демонстрации fullstack разработки с современным стеком технологий.
+Created to demonstrate fullstack development with modern tech stack.
 
 ---
 
-⭐ Если проект понравился - поставьте звезду!
+⭐ If you like the project - give it a star!

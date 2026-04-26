@@ -1,130 +1,130 @@
 # 🔐 Security Checklist
 
-## ✅ Что БЕЗОПАСНО загружать на GitHub
+## ✅ What is SAFE to upload to GitHub
 
-### Файлы в репозитории:
-- ✅ **server/.env.example** - только примеры, без реальных данных
-- ✅ **client/.env.example** - только примеры
-- ✅ Весь исходный код (TypeScript, React)
-- ✅ Документация (.md файлы)
-- ✅ package.json файлы
-- ✅ Конфигурационные файлы (tsconfig.json, etc.)
+### Files in repository:
+- ✅ **server/.env.example** - only examples, no real data
+- ✅ **client/.env.example** - only examples
+- ✅ All source code (TypeScript, React)
+- ✅ Documentation (.md files)
+- ✅ package.json files
+- ✅ Configuration files (tsconfig.json, etc.)
 
-### Что содержат .env.example файлы:
+### What .env.example files contain:
 ```
 DATABASE_URL=postgresql://user:password@localhost:5432/smart_tasks
 JWT_SECRET=your-secret-key-change-in-production
 ```
-- Это **placeholder** значения
-- Не содержат реальных паролей
-- Показывают только формат
+- These are **placeholder** values
+- Do not contain real passwords
+- Show only the format
 
-## 🔒 Что ЗАЩИЩЕНО от загрузки
+## 🔒 What is PROTECTED from upload
 
-### .gitignore исключает:
-- ❌ `.env` - реальные секреты
-- ❌ `.env.local` - локальные настройки
-- ❌ `.env.production` - production секреты
-- ❌ `node_modules/` - зависимости
-- ❌ `dist/` - скомпилированный код
-- ❌ `*.log` - логи
+### .gitignore excludes:
+- ❌ `.env` - real secrets
+- ❌ `.env.local` - local settings
+- ❌ `.env.production` - production secrets
+- ❌ `node_modules/` - dependencies
+- ❌ `dist/` - compiled code
+- ❌ `*.log` - logs
 
-### Найденные защищенные файлы:
-- `client/.env.local` - НЕ будет загружен (в .gitignore)
+### Found protected files:
+- `client/.env.local` - will NOT be uploaded (in .gitignore)
 
-## ⚠️ Важно перед загрузкой
+## ⚠️ Important before uploading
 
-### Проверьте что НЕТ:
-- [ ] Реальных паролей от базы данных
-- [ ] Реальных JWT секретов
-- [ ] API ключей (AWS, Stripe, etc.)
-- [ ] Приватных ключей (.pem, .key)
-- [ ] Персональных данных
-- [ ] Токенов доступа
+### Check that there are NO:
+- [ ] Real database passwords
+- [ ] Real JWT secrets
+- [ ] API keys (AWS, Stripe, etc.)
+- [ ] Private keys (.pem, .key)
+- [ ] Personal data
+- [ ] Access tokens
 
-### Команда для проверки:
+### Command to check:
 ```bash
-# Проверить что будет загружено
+# Check what will be uploaded
 git ls-files
 
-# Проверить на секреты
+# Check for secrets
 git ls-files | xargs grep -i "password\|secret\|key" | grep -v "example\|placeholder"
 ```
 
-## ✅ Финальная проверка
+## ✅ Final check
 
-### Что в .env.example:
+### What's in .env.example:
 ```
 PORT=5000
 DATABASE_URL=postgresql://user:password@localhost:5432/smart_tasks
 JWT_SECRET=your-secret-key-change-in-production
 ```
-- ✅ Все значения - примеры
-- ✅ Нет реальных данных
-- ✅ Безопасно для публикации
+- ✅ All values are examples
+- ✅ No real data
+- ✅ Safe for publication
 
-### Что в client/.env.example:
+### What's in client/.env.example:
 ```
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
-- ✅ Только localhost URL
-- ✅ Нет секретов
-- ✅ Безопасно для публикации
+- ✅ Only localhost URL
+- ✅ No secrets
+- ✅ Safe for publication
 
-## 🎯 Рекомендации
+## 🎯 Recommendations
 
-### После загрузки на GitHub:
+### After uploading to GitHub:
 
-1. **Для других разработчиков:**
+1. **For other developers:**
    ```bash
-   # Они должны создать свои .env файлы
+   # They should create their own .env files
    cp server/.env.example server/.env
    cp client/.env.example client/.env.local
    
-   # И заполнить своими данными
+   # And fill with their own data
    ```
 
-2. **Для production:**
-   - Используйте переменные окружения на хостинге
+2. **For production:**
+   - Use environment variables on hosting
    - Heroku: `heroku config:set JWT_SECRET=...`
-   - Vercel: добавьте в Environment Variables
-   - Никогда не коммитьте production .env
+   - Vercel: add to Environment Variables
+   - Never commit production .env
 
 3. **GitHub Secrets:**
-   - Для CI/CD используйте GitHub Secrets
+   - For CI/CD use GitHub Secrets
    - Settings → Secrets and variables → Actions
 
-## 🚨 Что делать если случайно закоммитили секрет
+## 🚨 What to do if you accidentally committed a secret
 
-### Если секрет попал в git:
+### If a secret got into git:
 
-1. **Немедленно смените секрет** (пароль, токен, ключ)
+1. **Immediately change the secret** (password, token, key)
 
-2. **Удалите из истории git:**
+2. **Remove from git history:**
    ```bash
-   # Удалить файл из истории
+   # Remove file from history
    git filter-branch --force --index-filter \
      "git rm --cached --ignore-unmatch server/.env" \
      --prune-empty --tag-name-filter cat -- --all
    
-   # Или используйте BFG Repo-Cleaner
+   # Or use BFG Repo-Cleaner
    bfg --delete-files .env
    ```
 
-3. **Force push (ОСТОРОЖНО!):**
+3. **Force push (CAREFUL!):**
    ```bash
    git push origin --force --all
    ```
 
-4. **Сообщите команде** что секрет был скомпрометирован
+4. **Notify the team** that the secret was compromised
 
-## ✅ Итог
+## ✅ Summary
 
-**Проект БЕЗОПАСЕН для загрузки на GitHub!**
+**Project is SAFE to upload to GitHub!**
 
-- Все секреты защищены .gitignore
-- .env.example содержит только примеры
-- Нет реальных паролей или ключей
-- Нет персональных данных
+- All secrets protected by .gitignore
+- .env.example contains only examples
+- No real passwords or keys
+- No personal data
 
-**Можно смело загружать! 🚀**
+**Safe to upload! 🚀**

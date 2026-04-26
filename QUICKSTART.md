@@ -1,36 +1,36 @@
 # Quick Start Checklist
 
-## ✅ Перед запуском
+## ✅ Before Running
 
-### 1. Установка PostgreSQL
-- [ ] Установите PostgreSQL (версия 12+)
-- [ ] Создайте базу данных: `createdb smart_tasks`
-- [ ] Запустите SQL скрипт: `psql -d smart_tasks -f server/database.sql`
+### 1. PostgreSQL Installation
+- [ ] Install PostgreSQL (version 12+)
+- [ ] Create database: `createdb smart_tasks`
+- [ ] Run SQL script: `psql -d smart_tasks -f server/database.sql`
 
-### 2. Настройка Backend
+### 2. Backend Setup
 ```bash
 cd server
 cp .env.example .env
-# Отредактируйте .env файл с вашими настройками
+# Edit .env file with your settings
 npm install
 ```
 
-### 3. Настройка Frontend
+### 3. Frontend Setup
 ```bash
 cd client
 cp .env.example .env.local
-# Убедитесь что NEXT_PUBLIC_API_URL указывает на backend
+# Make sure NEXT_PUBLIC_API_URL points to backend
 npm install
 ```
 
-### 4. Запуск проекта
+### 4. Run Project
 ```bash
-# Из корневой папки
+# From root folder
 npm install
 npm run dev
 ```
 
-Или отдельно:
+Or separately:
 ```bash
 # Terminal 1 - Backend
 cd server
@@ -41,99 +41,99 @@ cd client
 npm run dev
 ```
 
-## 🎯 Проверка работоспособности
+## 🎯 Functionality Check
 
 ### Backend (http://localhost:5000)
-- [ ] Откройте http://localhost:5000/api/health
-- [ ] Должны увидеть: `{"status":"ok","message":"Server is running"}`
+- [ ] Open http://localhost:5000/api/health
+- [ ] Should see: `{"status":"ok","message":"Server is running"}`
 
 ### Frontend (http://localhost:3000)
-- [ ] Откройте http://localhost:3000
-- [ ] Должна открыться страница авторизации
-- [ ] Зарегистрируйте нового пользователя
-- [ ] Войдите в систему
-- [ ] Проверьте все страницы: Dashboard, Tasks, Projects, Analytics
+- [ ] Open http://localhost:3000
+- [ ] Login page should open
+- [ ] Register a new user
+- [ ] Login to the system
+- [ ] Check all pages: Dashboard, Tasks, Projects, Analytics
 
-## 🧪 Тестовый сценарий
+## 🧪 Test Scenario
 
-1. **Регистрация**
-   - [ ] Зарегистрируйте пользователя
-   - [ ] Проверьте что токен сохранился
+1. **Registration**
+   - [ ] Register a user
+   - [ ] Check that token is saved
 
-2. **Создание проекта**
-   - [ ] Перейдите в Projects
-   - [ ] Создайте проект "Test Project"
-   - [ ] Выберите цвет
+2. **Create Project**
+   - [ ] Go to Projects
+   - [ ] Create project "Test Project"
+   - [ ] Choose a color
 
-3. **Создание задач**
-   - [ ] Перейдите в Tasks
-   - [ ] Создайте задачу "High Priority Task" (priority: high, status: todo)
-   - [ ] Создайте задачу "In Progress Task" (status: in_progress)
-   - [ ] Создайте задачу "Completed Task" (status: done)
-   - [ ] Добавьте дедлайны
+3. **Create Tasks**
+   - [ ] Go to Tasks
+   - [ ] Create task "High Priority Task" (priority: high, status: todo)
+   - [ ] Create task "In Progress Task" (status: in_progress)
+   - [ ] Create task "Completed Task" (status: done)
+   - [ ] Add deadlines
 
-4. **Проверка Dashboard**
-   - [ ] Перейдите в Dashboard
-   - [ ] Проверьте статистику (Total, To Do, In Progress, Done)
-   - [ ] Проверьте предупреждения о дедлайнах
+4. **Check Dashboard**
+   - [ ] Go to Dashboard
+   - [ ] Check statistics (Total, To Do, In Progress, Done)
+   - [ ] Check deadline warnings
 
-5. **Проверка Analytics**
-   - [ ] Перейдите в Analytics
-   - [ ] Проверьте графики по статусам
-   - [ ] Проверьте графики по приоритетам
-   - [ ] Проверьте умные подсказки
+5. **Check Analytics**
+   - [ ] Go to Analytics
+   - [ ] Check status charts
+   - [ ] Check priority charts
+   - [ ] Check smart suggestions
 
-6. **Редактирование задач**
-   - [ ] Измените статус задачи
-   - [ ] Измените приоритет
-   - [ ] Обновите дедлайн
+6. **Edit Tasks**
+   - [ ] Change task status
+   - [ ] Change priority
+   - [ ] Update deadline
 
-7. **Удаление**
-   - [ ] Удалите задачу
-   - [ ] Удалите проект
+7. **Delete**
+   - [ ] Delete a task
+   - [ ] Delete a project
 
 ## 🐛 Troubleshooting
 
-### Backend не запускается
+### Backend won't start
 ```bash
-# Проверьте что PostgreSQL запущен
+# Check that PostgreSQL is running
 pg_isready
 
-# Проверьте подключение к БД
+# Check database connection
 psql -d smart_tasks -c "SELECT 1"
 
-# Проверьте переменные окружения
+# Check environment variables
 cat server/.env
 ```
 
-### Frontend не подключается к Backend
+### Frontend won't connect to Backend
 ```bash
-# Проверьте что backend запущен
+# Check that backend is running
 curl http://localhost:5000/api/health
 
-# Проверьте переменные окружения
+# Check environment variables
 cat client/.env.local
 
-# Проверьте CORS настройки в server/src/index.ts
+# Check CORS settings in server/src/index.ts
 ```
 
-### Ошибки TypeScript
+### TypeScript Errors
 ```bash
-# Переустановите зависимости
+# Reinstall dependencies
 rm -rf node_modules package-lock.json
 npm install
 
-# Проверьте версии
-node --version  # должна быть 18+
+# Check versions
+node --version  # should be 18+
 npm --version
 ```
 
-### База данных
+### Database
 ```bash
-# Пересоздайте таблицы
+# Recreate tables
 psql -d smart_tasks -f server/database.sql
 
-# Проверьте таблицы
+# Check tables
 psql -d smart_tasks -c "\dt"
 ```
 
@@ -153,34 +153,34 @@ npm run build
 npm start
 ```
 
-## 🚀 Следующие шаги
+## 🚀 Next Steps
 
-После успешного запуска:
-- [ ] Прочитайте ARCHITECTURE.md для понимания структуры
-- [ ] Изучите API_EXAMPLES.md для работы с API
-- [ ] Посмотрите CONTRIBUTING.md если хотите внести изменения
-- [ ] Прочитайте DEPLOYMENT.md для деплоя в production
+After successful launch:
+- [ ] Read ARCHITECTURE.md to understand the structure
+- [ ] Study API_EXAMPLES.md for working with the API
+- [ ] Check CONTRIBUTING.md if you want to make changes
+- [ ] Read DEPLOYMENT.md for production deployment
 
-## 📝 Полезные команды
+## 📝 Useful Commands
 
 ```bash
-# Просмотр логов PostgreSQL
+# View PostgreSQL logs
 tail -f /var/log/postgresql/postgresql-*.log
 
-# Backup базы данных
+# Backup database
 pg_dump smart_tasks > backup.sql
 
-# Restore базы данных
+# Restore database
 psql smart_tasks < backup.sql
 
-# Проверка портов
+# Check ports
 lsof -i :5000  # Backend
 lsof -i :3000  # Frontend
 lsof -i :5432  # PostgreSQL
 ```
 
-## 🎉 Готово!
+## 🎉 Done!
 
-Если все чеклисты пройдены - проект готов к использованию!
+If all checklists are passed - the project is ready to use!
 
-Для вопросов и багов создавайте issues в репозитории.
+For questions and bugs, create issues in the repository.

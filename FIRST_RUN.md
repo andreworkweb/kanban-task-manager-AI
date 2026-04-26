@@ -1,29 +1,29 @@
-# 🎉 Первый запуск - Пошаговая инструкция
+# 🎉 First Run - Step-by-Step Guide
 
-## Шаг 1: Проверка требований
+## Step 1: Check Requirements
 
-Убедитесь что установлено:
+Make sure you have installed:
 ```bash
-node --version    # должно быть 18+
-npm --version     # должно быть 9+
+node --version    # should be 18+
+npm --version     # should be 9+
 psql --version    # PostgreSQL 12+
 ```
 
-Если чего-то нет:
+If something is missing:
 - Node.js: https://nodejs.org/
 - PostgreSQL: https://www.postgresql.org/download/
 
-## Шаг 2: Создание базы данных
+## Step 2: Create Database
 
 ### Windows (PowerShell/CMD):
 ```bash
-# Запустите PostgreSQL
-# Обычно запускается автоматически после установки
+# Start PostgreSQL
+# Usually starts automatically after installation
 
-# Создайте базу данных
+# Create database
 createdb -U postgres smart_tasks
 
-# Если нужен пароль, используйте:
+# If password is required, use:
 # psql -U postgres
 # CREATE DATABASE smart_tasks;
 # \q
@@ -34,35 +34,35 @@ createdb -U postgres smart_tasks
 sudo -u postgres createdb smart_tasks
 ```
 
-## Шаг 3: Инициализация таблиц
+## Step 3: Initialize Tables
 
 ```bash
 cd "A:\I WONNA\projultr"
 
-# Запустите SQL скрипт
+# Run SQL script
 psql -U postgres -d smart_tasks -f server/database.sql
 
-# Проверьте что таблицы созданы
+# Check that tables were created
 psql -U postgres -d smart_tasks -c "\dt"
 ```
 
-Вы должны увидеть 4 таблицы:
+You should see 4 tables:
 - users
 - projects
 - tasks
 - activity_logs
 
-## Шаг 4: Настройка Backend
+## Step 4: Configure Backend
 
 ```bash
 cd server
 
-# Создайте .env файл
+# Create .env file
 copy .env.example .env    # Windows
-# или
+# or
 cp .env.example .env      # Linux/Mac
 
-# Откройте .env и настройте:
+# Open .env and configure:
 ```
 
 **server/.env:**
@@ -70,17 +70,17 @@ cp .env.example .env      # Linux/Mac
 PORT=5000
 NODE_ENV=development
 
-# Замените на ваши данные PostgreSQL
+# Replace with your PostgreSQL credentials
 DATABASE_URL=postgresql://postgres:your_password@localhost:5432/smart_tasks
 
-# Сгенерируйте случайный секрет (или используйте любую строку)
+# Generate a random secret (or use any string)
 JWT_SECRET=my_super_secret_key_12345
 JWT_EXPIRES_IN=7d
 JWT_REFRESH_SECRET=my_refresh_secret_key_67890
 JWT_REFRESH_EXPIRES_IN=30d
 ```
 
-**Как сгенерировать секрет:**
+**How to generate a secret:**
 ```bash
 # Node.js
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
@@ -89,23 +89,23 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 openssl rand -hex 32
 ```
 
-## Шаг 5: Установка зависимостей Backend
+## Step 5: Install Backend Dependencies
 
 ```bash
-# Находясь в папке server
+# While in server folder
 npm install
 
-# Дождитесь завершения установки
+# Wait for installation to complete
 ```
 
-## Шаг 6: Настройка Frontend
+## Step 6: Configure Frontend
 
 ```bash
 cd ../client
 
-# Создайте .env.local файл
+# Create .env.local file
 copy .env.example .env.local    # Windows
-# или
+# or
 cp .env.example .env.local      # Linux/Mac
 ```
 
@@ -114,198 +114,198 @@ cp .env.example .env.local      # Linux/Mac
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
 
-## Шаг 7: Установка зависимостей Frontend
+## Step 7: Install Frontend Dependencies
 
 ```bash
-# Находясь в папке client
+# While in client folder
 npm install
 
-# Дождитесь завершения установки
+# Wait for installation to complete
 ```
 
-## Шаг 8: Запуск проекта
+## Step 8: Run the Project
 
-### Вариант 1: Запуск всего проекта (рекомендуется)
+### Option 1: Run entire project (recommended)
 
 ```bash
-# Вернитесь в корневую папку
+# Return to root folder
 cd ..
 
-# Установите зависимости для root
+# Install dependencies for root
 npm install
 
-# Запустите оба сервера одновременно
+# Run both servers simultaneously
 npm run dev
 ```
 
-### Вариант 2: Запуск отдельно (два терминала)
+### Option 2: Run separately (two terminals)
 
-**Терминал 1 - Backend:**
+**Terminal 1 - Backend:**
 ```bash
 cd server
 npm run dev
 ```
 
-Вы должны увидеть:
+You should see:
 ```
 🚀 Server running on port 5000
 ```
 
-**Терминал 2 - Frontend:**
+**Terminal 2 - Frontend:**
 ```bash
 cd client
 npm run dev
 ```
 
-Вы должны увидеть:
+You should see:
 ```
 ✓ Ready in 2.5s
 ○ Local: http://localhost:3000
 ```
 
-## Шаг 9: Проверка работы
+## Step 9: Verify It Works
 
-### 1. Проверьте Backend
-Откройте в браузере: http://localhost:5000/api/health
+### 1. Check Backend
+Open in browser: http://localhost:5000/api/health
 
-Должны увидеть:
+You should see:
 ```json
 {"status":"ok","message":"Server is running"}
 ```
 
-### 2. Проверьте Frontend
-Откройте в браузере: http://localhost:3000
+### 2. Check Frontend
+Open in browser: http://localhost:3000
 
-Должна открыться страница авторизации.
+The login page should open.
 
-## Шаг 10: Первое использование
+## Step 10: First Use
 
-1. **Регистрация**
-   - Нажмите "Register"
-   - Введите:
+1. **Registration**
+   - Click "Register"
+   - Enter:
      - Name: Test User
      - Email: test@example.com
      - Password: password123
-   - Нажмите "Register"
+   - Click "Register"
 
-2. **Вход в систему**
-   - Вы автоматически войдете после регистрации
-   - Откроется Dashboard
+2. **Login**
+   - You will be automatically logged in after registration
+   - Dashboard will open
 
-3. **Создайте первую задачу**
-   - Перейдите в "Tasks"
-   - Нажмите "+ New Task"
-   - Заполните форму:
-     - Title: Моя первая задача
-     - Description: Тестовая задача
+3. **Create first task**
+   - Go to "Tasks"
+   - Click "+ New Task"
+   - Fill the form:
+     - Title: My first task
+     - Description: Test task
      - Status: To Do
      - Priority: High
-     - Due Date: выберите завтрашнюю дату
-   - Нажмите "Create"
+     - Due Date: select tomorrow's date
+   - Click "Create"
 
-4. **Создайте проект**
-   - Перейдите в "Projects"
-   - Нажмите "+ New Project"
-   - Заполните:
-     - Name: Тестовый проект
-     - Description: Мой первый проект
-     - Color: выберите любой цвет
-   - Нажмите "Create"
+4. **Create project**
+   - Go to "Projects"
+   - Click "+ New Project"
+   - Fill:
+     - Name: Test project
+     - Description: My first project
+     - Color: choose any color
+   - Click "Create"
 
-5. **Проверьте аналитику**
-   - Перейдите в "Analytics"
-   - Посмотрите статистику по задачам
+5. **Check analytics**
+   - Go to "Analytics"
+   - View task statistics
 
-## 🐛 Возможные проблемы
+## 🐛 Possible Issues
 
-### Backend не запускается
+### Backend won't start
 
-**Ошибка: "Cannot connect to database"**
+**Error: "Cannot connect to database"**
 ```bash
-# Проверьте что PostgreSQL запущен
+# Check that PostgreSQL is running
 pg_isready
 
-# Проверьте DATABASE_URL в server/.env
-# Убедитесь что пароль правильный
+# Check DATABASE_URL in server/.env
+# Make sure the password is correct
 ```
 
-**Ошибка: "Port 5000 already in use"**
+**Error: "Port 5000 already in use"**
 ```bash
-# Измените порт в server/.env
+# Change port in server/.env
 PORT=5001
 
-# И в client/.env.local
+# And in client/.env.local
 NEXT_PUBLIC_API_URL=http://localhost:5001/api
 ```
 
-### Frontend не подключается к Backend
+### Frontend won't connect to Backend
 
-**Ошибка: "Network Error"**
+**Error: "Network Error"**
 ```bash
-# Убедитесь что backend запущен
+# Make sure backend is running
 curl http://localhost:5000/api/health
 
-# Проверьте NEXT_PUBLIC_API_URL в client/.env.local
+# Check NEXT_PUBLIC_API_URL in client/.env.local
 ```
 
-### Ошибки при установке зависимостей
+### Errors during dependency installation
 
 ```bash
-# Очистите кеш и переустановите
+# Clear cache and reinstall
 rm -rf node_modules package-lock.json
 npm cache clean --force
 npm install
 ```
 
-## 📝 Полезные команды
+## 📝 Useful Commands
 
 ```bash
-# Остановить серверы
-Ctrl + C (в терминале)
+# Stop servers
+Ctrl + C (in terminal)
 
-# Перезапустить backend
+# Restart backend
 cd server
 npm run dev
 
-# Перезапустить frontend
+# Restart frontend
 cd client
 npm run dev
 
-# Просмотр логов PostgreSQL (Linux/Mac)
+# View PostgreSQL logs (Linux/Mac)
 tail -f /var/log/postgresql/postgresql-*.log
 
-# Backup базы данных
+# Backup database
 pg_dump -U postgres smart_tasks > backup.sql
 
-# Restore базы данных
+# Restore database
 psql -U postgres smart_tasks < backup.sql
 ```
 
-## ✅ Чеклист готовности
+## ✅ Readiness Checklist
 
-- [ ] PostgreSQL установлен и запущен
-- [ ] База данных smart_tasks создана
-- [ ] Таблицы созданы (users, tasks, projects, activity_logs)
-- [ ] Backend .env настроен
-- [ ] Frontend .env.local настроен
-- [ ] Backend запущен на порту 5000
-- [ ] Frontend запущен на порту 3000
-- [ ] http://localhost:5000/api/health возвращает OK
-- [ ] http://localhost:3000 открывает страницу авторизации
-- [ ] Регистрация работает
-- [ ] Можно создать задачу
-- [ ] Можно создать проект
+- [ ] PostgreSQL installed and running
+- [ ] smart_tasks database created
+- [ ] Tables created (users, tasks, projects, activity_logs)
+- [ ] Backend .env configured
+- [ ] Frontend .env.local configured
+- [ ] Backend running on port 5000
+- [ ] Frontend running on port 3000
+- [ ] http://localhost:5000/api/health returns OK
+- [ ] http://localhost:3000 opens login page
+- [ ] Registration works
+- [ ] Can create a task
+- [ ] Can create a project
 
-## 🎉 Готово!
+## 🎉 Done!
 
-Если все пункты чеклиста выполнены - проект работает!
+If all checklist items are completed - the project works!
 
-**Следующие шаги:**
-- Изучите [ARCHITECTURE.md](ARCHITECTURE.md) для понимания структуры
-- Посмотрите [API_EXAMPLES.md](API_EXAMPLES.md) для работы с API
-- Прочитайте [CONTRIBUTING.md](CONTRIBUTING.md) если хотите что-то добавить
+**Next steps:**
+- Study [ARCHITECTURE.md](ARCHITECTURE.md) to understand the structure
+- Check [API_EXAMPLES.md](API_EXAMPLES.md) for working with the API
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) if you want to add something
 
-**Нужна помощь?**
-- Проверьте [QUICKSTART.md](QUICKSTART.md)
-- Посмотрите troubleshooting секцию
-- Создайте issue в репозитории
+**Need help?**
+- Check [QUICKSTART.md](QUICKSTART.md)
+- Look at the troubleshooting section
+- Create an issue in the repository
