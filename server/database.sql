@@ -1,4 +1,7 @@
--- Create users table
+-- Smart Task Platform Database Schema
+-- PostgreSQL 12+
+
+-- Users table
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
@@ -7,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create projects table
+-- Projects table
 CREATE TABLE IF NOT EXISTS projects (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -17,7 +20,7 @@ CREATE TABLE IF NOT EXISTS projects (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create tasks table
+-- Tasks table
 CREATE TABLE IF NOT EXISTS tasks (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -32,7 +35,7 @@ CREATE TABLE IF NOT EXISTS tasks (
   completed_at TIMESTAMP
 );
 
--- Create activity_logs table
+-- Activity logs table for audit trail
 CREATE TABLE IF NOT EXISTS activity_logs (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -41,7 +44,7 @@ CREATE TABLE IF NOT EXISTS activity_logs (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create indexes for better performance
+-- Indexes for performance optimization
 CREATE INDEX IF NOT EXISTS idx_tasks_user_id ON tasks(user_id);
 CREATE INDEX IF NOT EXISTS idx_tasks_project_id ON tasks(project_id);
 CREATE INDEX IF NOT EXISTS idx_tasks_status ON tasks(status);

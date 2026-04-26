@@ -2,6 +2,7 @@ import { Response } from 'express';
 import { query } from '../config/database';
 import { AuthRequest } from '../types';
 
+// Get all tasks for the authenticated user
 export const getTasks = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user!.id;
@@ -15,6 +16,7 @@ export const getTasks = async (req: AuthRequest, res: Response) => {
   }
 };
 
+// Create a new task
 export const createTask = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user!.id;
@@ -26,6 +28,7 @@ export const createTask = async (req: AuthRequest, res: Response) => {
       [userId, title, description, status || 'todo', priority || 'medium', due_date, project_id]
     );
 
+    // Log the activity
     await query(
       'INSERT INTO activity_logs (user_id, task_id, action) VALUES ($1, $2, $3)',
       [userId, result.rows[0].id, 'created']
@@ -37,6 +40,7 @@ export const createTask = async (req: AuthRequest, res: Response) => {
   }
 };
 
+// Update an existing task
 export const updateTask = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user!.id;
@@ -61,6 +65,7 @@ export const updateTask = async (req: AuthRequest, res: Response) => {
       return res.status(404).json({ message: 'Task not found' });
     }
 
+    // Log the activity
     await query(
       'INSERT INTO activity_logs (user_id, task_id, action) VALUES ($1, $2, $3)',
       [userId, id, 'updated']
@@ -72,6 +77,7 @@ export const updateTask = async (req: AuthRequest, res: Response) => {
   }
 };
 
+// Delete a task
 export const deleteTask = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user!.id;

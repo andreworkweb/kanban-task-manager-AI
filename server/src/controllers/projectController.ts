@@ -2,6 +2,7 @@ import { Response } from 'express';
 import { query } from '../config/database';
 import { AuthRequest } from '../types';
 
+// Get all projects for the authenticated user
 export const getProjects = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user!.id;
@@ -15,6 +16,7 @@ export const getProjects = async (req: AuthRequest, res: Response) => {
   }
 };
 
+// Create a new project
 export const createProject = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user!.id;
@@ -31,6 +33,7 @@ export const createProject = async (req: AuthRequest, res: Response) => {
   }
 };
 
+// Delete a project
 export const deleteProject = async (req: AuthRequest, res: Response) => {
   try {
     const userId = req.user!.id;
